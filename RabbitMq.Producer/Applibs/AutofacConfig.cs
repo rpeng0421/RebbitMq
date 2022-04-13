@@ -35,6 +35,8 @@ namespace RabbitMq.PubSubData.Applibs
             builder.RegisterType<CreateWallets>()
                 .PropertiesAutowired(PropertyWiringOptions.AllowCircularDependencies)
                 .SingleInstance();
+
+            container = builder.Build();
         }
     }
 }

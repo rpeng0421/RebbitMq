@@ -27,7 +27,9 @@ namespace RabbitMq.Domain.Model
             factory = new ConnectionFactory()
             {
                 AutomaticRecoveryEnabled = true,
-                NetworkRecoveryInterval = TimeSpan.FromSeconds(5)
+                NetworkRecoveryInterval = TimeSpan.FromSeconds(5),
+                UserName = "admin",
+                Password = "admin"
             };
         }
 

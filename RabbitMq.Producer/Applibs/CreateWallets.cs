@@ -21,13 +21,15 @@ namespace RabbitMq.PubSubData.Applibs
             var index = 1;
             while (true)
             {
-                this.rabbitMqFactory.PublishDirect("WalletService", new WalletCreatedEvent
+                var data = new WalletCreatedEvent
                 {
                     Type = nameof(WalletCreatedEvent),
                     Timestamp = TimestampHelper.Now(),
                     Id = $"walletId-{index}",
                     Name = $"walletName-{index}"
-                });
+                };
+                this.rabbitMqFactory.PublishDirect("WalletService", data);
+                Console.WriteLine($"send event data {index}");
                 index++;
                 Thread.Sleep(TimeSpan.FromSeconds(5));
             }
