@@ -46,6 +46,7 @@ namespace RabbitMq.Domain.Model
                 if (handleResult)
                 {
                     model.BasicAck(args.DeliveryTag, true);
+                    return;
                 }
 
                 model.BasicNack(args.DeliveryTag, true, true);

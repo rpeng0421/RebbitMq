@@ -112,7 +112,6 @@
         <Compile Include="Applibs\AutofacConfig.cs" />
         <Compile Include="Applibs\ConfigHelper.cs" />
         <Compile Include="Applibs\CreateWallets.cs" />
-        <Compile Include="Applibs\EventDispatcher.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
+using Newtonsoft.Json;
 using RabbitMq.Domain.Event;
 using RabbitMq.Domain.Helper;
 using RabbitMq.Domain.Model;
@@ -21,14 +22,16 @@ namespace RabbitMq.PubSubData.Applibs
             var index = 1;
             while (true)
             {
-                var data = new WalletCreatedEvent
+                var data = new WalletCreatedEvent()
                 {
-                    Type = nameof(WalletCreatedEvent),
-                    Timestamp = TimestampHelper.Now(),
                     Id = $"walletId-{index}",
                     Name = $"walletName-{index}"
                 };
-                this.rabbitMqFactory.PublishDirect("WalletService", data);
+                this.rabbitMqFactory.PublishDirect("WalletService",
+                    new EventData(JsonConvert.SerializeObject(data))
+                    {
+                        Type = nameof(WalletCreatedEvent),
+                    });
                 Console.WriteLine($"send event data {index}");
                 index++;
                 Thread.Sleep(TimeSpan.FromSeconds(5));
