@@ -2,6 +2,6 @@
 {
     public interface IConsumerHandler<TEvent> where TEvent : EventData
     {
-        bool Handle(EventData eventData);
+        bool Handle(TEvent eventData);
     }
 }

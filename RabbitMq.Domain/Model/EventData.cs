@@ -1,4 +1,5 @@
 ﻿using System.Reflection.Emit;
+using Newtonsoft.Json;
 
 namespace RabbitMq.Domain.Model
 {
@@ -6,6 +7,10 @@ namespace RabbitMq.Domain.Model
     {
         public string Type { get; set; }
         public long Timestamp { get; set; }
-        public string Data { get; set; }
+
+        public override string ToString()
+        {
+            return JsonConvert.SerializeObject(this);
+        }
     }
 }

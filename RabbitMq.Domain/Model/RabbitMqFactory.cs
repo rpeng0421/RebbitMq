@@ -65,14 +65,8 @@ namespace RabbitMq.Domain.Model
         public void Publish<T>(string topicName, T data, string exchangeType) where T : EventData
         {
             var (exchangeKey, model) = this.GetModel(topicName, exchangeType);
-            var es = new EventData
-            {
-                Type = typeof(T).Name,
-                Timestamp = 0,
-                Data = null
-            };
 
-            var body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(es));
+            var body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(data));
             var prop = model.CreateBasicProperties();
             prop.Expiration = RmqExpiration;
 

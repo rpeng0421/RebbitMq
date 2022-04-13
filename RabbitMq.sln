@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMq.Domain", "RabbitMq.Domain\RabbitMq.Domain.csproj", "{21688AA2-1D19-4C99-9244-B0C43600AA70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMq.PubSubData", "RabbitMq.PubSubData\RabbitMq.PubSubData.csproj", "{CB7A467D-2729-4966-BA3D-26035C4F548B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMq.Producer", "RabbitMq.Producer\RabbitMq.Producer.csproj", "{CB7A467D-2729-4966-BA3D-26035C4F548B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
